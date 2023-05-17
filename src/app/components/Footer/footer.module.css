@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   /* border-top: 1px solid rgba(0, 0, 0, 0.104); */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
 }
 
 .footerContainer {

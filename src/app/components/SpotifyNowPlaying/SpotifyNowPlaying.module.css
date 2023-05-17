@@ -10,6 +10,10 @@
   max-height: 86px;
 }
 
+.SpotifyNowPlaying:hover {
+  transform: translateY(-1px);
+}
+
 .SpotifyNowPlayingAlbumArtWrapper {
   height: 64px;
 }
