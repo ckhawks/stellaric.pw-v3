@@ -5,23 +5,23 @@ import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 import Image from 'next/image';
 
-async function getSpotifyNowPlayingData () {
-  const res = await fetch('http://127.0.0.1:3000/api/spotify', { next: { revalidate: 10 } });
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch Spotify Now Playing data.');
-  }
-
-  return res;
-}
-
-
 // async function getSpotifyNowPlayingData () {
-//   // const res = await fetch('/api/spotify', {  cache: 'no-store' });
-//   const res = await import ('../../api/spotify/route');
+//   const res = await fetch('http://127.0.0.1:3000/api/spotify', { next: { revalidate: 10 } });
 
-//   return await (await res.GET()).json();
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch Spotify Now Playing data.');
+//   }
+
+//   return res;
 // }
+
+
+async function getSpotifyNowPlayingData () {
+  // const res = await fetch('/api/spotify', {  cache: 'no-store' });
+  const res = await import ('../../api/spotify/route');
+
+  return await (await res.GET()); // .json();
+}
 
 // TODO make it reload/rehydrate next track after duration + progress_ms + some offset
 
