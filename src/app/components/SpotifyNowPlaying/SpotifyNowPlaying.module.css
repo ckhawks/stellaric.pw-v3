@@ -23,7 +23,7 @@
 }
 
 .SpotifyNowPlayingInfoWrapper {
-  padding: 10px;
+  padding: 0px 10px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -45,6 +45,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.SpotifyNowPlayingInfoTime {
+  margin: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 60%;
+  font-size: 0.9rem;
 }
 
 .SpotifyNowPlayingSpotifyLogo {

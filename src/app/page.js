@@ -31,7 +31,7 @@ export default function HomeTesting() {
             /> */}
         <div className={styles.content}>
 
-          <div className={styles.idk}>
+          {/* <div className={styles.idk}>
             <h1 className={styles.h1}>
               Introduction
             </h1>
@@ -40,7 +40,7 @@ export default function HomeTesting() {
             </p>
             
             
-          </div>
+          </div> */}
 
           <div className={styles.homeCards}>
             <Link href="/design" className={classes([styles.homeCard, styles.homeCardDesign])}>
@@ -60,7 +60,7 @@ export default function HomeTesting() {
                 <div className={styles.homeCardInner}>  
                   <span className={styles.largeIcon}><FontAwesomeIcon icon={faClapperboard}/></span>
                   <h2>Production</h2>
-                  <p>I am a technical director for live esports events.</p>
+                  <p>I am a technical director and observer for live esports events.</p>
                   <p className={styles.homeCardLinkoff}>Go to Production →</p>
                   {/* <Link href="/design">Go to Design</Link> */}
                 </div>

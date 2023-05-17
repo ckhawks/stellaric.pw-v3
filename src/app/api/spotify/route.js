@@ -2,6 +2,7 @@
 // https://theodorusclarence.com/blog/spotify-now-playing
 
 import querystring from 'querystring';
+import { formatDistance } from 'date-fns';
 
 import { NextResponse } from "next/server";
 // https://nextjs.org/docs/app/building-your-application/routing/router-handlers
@@ -86,6 +87,9 @@ export async function GET(request) {
       .join(', '),
     albumImageUrl: responseJson.item.album.images[0].url,
     songUrl: responseJson.item.external_urls.spotify,
+    contextUrl: responseJson.context.external_urls.spotify,
+    timestamp: responseJson.timestamp,
+    timeBefore: formatDistance(new Date(responseJson.timestamp), Date.now()) + " ago",
   };
 
   return NextResponse.json({data});

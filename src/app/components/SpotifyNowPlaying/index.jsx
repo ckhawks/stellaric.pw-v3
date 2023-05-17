@@ -5,6 +5,7 @@ import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 import Image from 'next/image';
 
+import ReduxRumbleAlbumLogo from '/public/spotify/redux_rumble_album.jpeg';
 // async function getSpotifyNowPlayingData () {
 //   const res = await fetch('http://127.0.0.1:3000/api/spotify', { next: { revalidate: 10 } });
 
@@ -64,14 +65,15 @@ const SpotifyNowPlaying = async () => {
             target='_blank'
             rel='noopener noreferer'
             href={
-              spotifyData.isPlaying
-                ? spotifyData.songUrl
-                : 'https://open.spotify.com/user/meltedexistence'
+              spotifyData
+                ? spotifyData.contextUrl
+                // : 'https://open.spotify.com/user/meltedexistence'
+                : 'https://open.spotify.com/playlist/2BD1AvmRoNHyKRzWDqegSc?si=2baa6684c9a4451d'
             }
             className={styles.SpotifyNowPlaying} // 'relative flex w-72 items-center space-x-4 rounded-md border p-5 transition-shadow hover:shadow-md'
           >
             <div className={styles.SpotifyNowPlayingAlbumArtWrapper}>
-              {spotifyData.isPlaying ? (
+              {spotifyData ? (
                 <Image
                   className={styles.SpotifyNowPlayingAlbumArt}
                   width={64}
@@ -80,17 +82,27 @@ const SpotifyNowPlaying = async () => {
                   alt={spotifyData.album}
                 />
               ) : (
-                <FontAwesomeIcon icon={faSpotify} />
+                <Image className={styles.SpotifyNowPlayingAlbumArt}
+                  width={64}
+                  height={64}
+                  src={ReduxRumbleAlbumLogo}
+                  alt={"Redux Rumble Soundtrack"}
+                  />
               )}
             </div>
           
             <div className={styles.SpotifyNowPlayingInfoWrapper}>
               <p className={styles.SpotifyNowPlayingInfoTitle}>
-                {spotifyData.isPlaying ? spotifyData.title : 'Not Listening'}
+                {spotifyData ? spotifyData.title : 'Redux Rumble Soundtrack'}
               </p>
               <p className={styles.SpotifyNowPlayingInfoArtist}>
-                {spotifyData.isPlaying ? spotifyData.artist : 'Spotify'}
+                {spotifyData ? spotifyData.artist : 'Stellaric'}
               </p>
+              { spotifyData && (
+                <p className={styles.SpotifyNowPlayingInfoTime}>
+                  {spotifyData.isPlaying ? 'Listening now' : "Listened " + spotifyData.timeBefore}              
+              </p>
+               )}
             </div>
             <div className={styles.SpotifyNowPlayingSpotifyLogo}>
               <FontAwesomeIcon icon={faSpotify} />
