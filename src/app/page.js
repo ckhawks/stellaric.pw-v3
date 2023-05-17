@@ -1,95 +1,100 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 
-export default function Home() {
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNodes, faClapperboard, faCameraRetro, faCode } from '@fortawesome/free-solid-svg-icons';
+
+function classes(listOfClasses){
+  return listOfClasses.join(' ');
+}
+
+import HomeNavbar from './components/Navbar';
+import Footer from './components/Footer';
+
+
+export default function HomeTesting() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    
+    // <div className={styles.row} style={{justifyContent: 'center'}}>
+      <main className={classes([styles.maine, styles.column, styles.container])}>
+        
+        {/* <h1>Stellaric</h1> */}
+        {/* <Image
+            src="/vercel.svg"
+            alt="Vercel Logo"
+            width={100}
+            height={124}
+            priority
+            className={styles.logo}
+            /> */}
+        <div className={styles.content}>
+
+          <div className={styles.idk}>
+            <h1 className={styles.h1}>
+              Introduction
+            </h1>
+            <p>
+            Hello this is STELLARIC!!!
+            </p>
+            
+            
+          </div>
+
+          <div className={styles.homeCards}>
+            <Link href="/design" className={classes([styles.homeCard, styles.homeCardDesign])}>
+              <>
+                <div className={styles.homeCardInner}>  
+                  <span className={styles.largeIcon}><FontAwesomeIcon icon={faCircleNodes}/></span>
+                  <h2>Design</h2>
+                  <p className={styles.p}>I am a UX designer, graphic designer, and general designer.</p>
+                  <p className={styles.homeCardLinkoff}>Go to Design →</p>
+                  {/* <Link href="/design">Go to Design</Link> */}
+                </div>
+              </>
+            </Link>
+
+            <Link href="/production" className={classes([styles.homeCard, styles.homeCardProduction])}>
+              <>
+                <div className={styles.homeCardInner}>  
+                  <span className={styles.largeIcon}><FontAwesomeIcon icon={faClapperboard}/></span>
+                  <h2>Production</h2>
+                  <p>I am a technical director for live esports events.</p>
+                  <p className={styles.homeCardLinkoff}>Go to Production →</p>
+                  {/* <Link href="/design">Go to Design</Link> */}
+                </div>
+              </>
+            </Link>
+
+            <Link href="/photography" className={classes([styles.homeCard, styles.homeCardPhotography])}>
+              <>
+                <div className={styles.homeCardInner}>  
+                  <span className={styles.largeIcon}><FontAwesomeIcon icon={faCameraRetro}/></span>
+                  <h2>Photography</h2>
+                  <p>I like to take pretty pictures.</p>
+                  <p className={styles.homeCardLinkoff}>Go to Photography →</p>
+                  {/* <Link href="/design">Go to Design</Link> */}
+                </div>
+              </>
+            </Link>
+
+            <Link href="/development" className={classes([styles.homeCard, styles.homeCardDevelopment])}>
+              <>
+                <div className={styles.homeCardInner}>  
+                  <span className={styles.largeIcon}><FontAwesomeIcon icon={faCode}/></span>
+                  <h2>Development</h2>
+                  <p>I like to solve problems using software.</p>
+                  <p className={styles.homeCardLinkoff}>Go to Development →</p>
+                  {/* <Link href="/design">Go to Design</Link> */}
+                </div>
+              </>
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        
+        
+      </main>
+    // </div>
   )
 }

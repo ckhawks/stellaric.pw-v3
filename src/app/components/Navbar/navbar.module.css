@@ -1,0 +1,80 @@
+.homeNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  align-items: center;
+  padding: 3rem 0rem;
+  max-width: 800px;
+  margin-top: 70px;
+}
+
+.stellaricLogo {
+  color: black;
+  filter: invert();
+}
+
+.homeNavbarLeft {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 1.8rem;
+  gap: 8px;
+  align-items: center;
+}
+
+.homeNavbarLeft:hover {
+  transform: translateY(1px);
+}
+
+.homeNavbarRightWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* align-items: center; */
+  /* justify-content: flex-end; */
+  /* text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.373);
+  text-decoration-style:dashed; */
+}
+
+.homeNavbarRightTop {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.homeNavbarRightBottom {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  /* font-size: 1rem; */
+  /* font-weight: 300; */
+  justify-content: flex-end;
+}
+
+.homeNavbarLinkActive {
+  font-weight: bold;
+}
+
+.homeNavbarLink:hover {
+  color: rgba(0, 0, 0, 0.434);
+  transform: translateY(1px);
+}
+
+.homeNavbarHr {
+  display: block;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+margin-left: auto;
+margin-right: auto;
+border-style: inset;
+border-width: 1px;
+border-color: rgba(0, 0, 0, 0.213);
+width: 100%;
+margin-top: 30px;
+}

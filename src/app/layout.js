@@ -1,5 +1,16 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import { Inter } from 'next/font/google';
+// import { CssBaseline } from '@geist-ui/core';
+
+// FONT AWESOME!!!
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+import HomeNavbar from './components/Navbar';
+import Footer from './components/Footer';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,9 +20,26 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  
+  // const styles = CssBaseline.flush();
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <GeistProvider>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </GeistProvider>
+
+
+        <Fragment key="1">
+          {initialProps.styles}
+          {styles}
+        </Fragment>, */}
+        <HomeNavbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
