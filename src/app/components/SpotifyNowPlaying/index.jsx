@@ -6,7 +6,7 @@ import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 
 async function getSpotifyNowPlayingData () {
-  const res = await fetch('http://localhost:3000/api/spotify', { next: { revalidate: 10 } });
+  const res = await fetch('http://127.0.0.1:3000/api/spotify', { next: { revalidate: 10 } });
 
   if (!res.ok) {
     throw new Error('Failed to fetch Spotify Now Playing data.');
