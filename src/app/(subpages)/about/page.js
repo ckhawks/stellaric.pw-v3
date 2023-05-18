@@ -29,10 +29,16 @@ export default function About() {
           <Link href="https://diagram.com/" className={'link'}>Diagram</Link>
         </li>
       </ul>
-      <p>Additionally, I used some amount of these tutorials to help learn Next.js or whatever else I didn't know going into this project.</p>
+      <p>Additionally, I used these to help with what I didn't know during this project. Thank you to tutorial/resource authors!</p>
       <ul>
         <li>
           <Link href="https://maxleiter.com/blog/build-a-blog-with-nextjs-13" className={'link'}>https://maxleiter.com/blog/build-a-blog-with-nextjs-13</Link>
+        </li>
+        <li>
+          <Link href="https://getcssscan.com/css-box-shadow-examples" className={'link'}>https://getcssscan.com/css-box-shadow-examples</Link>
+        </li>
+        <li>
+          <Link href="https://theodorusclarence.com/blog/spotify-now-playing" className={'link'}>https://theodorusclarence.com/blog/spotify-now-playing</Link>
         </li>
       </ul>
 

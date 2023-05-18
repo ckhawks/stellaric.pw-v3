@@ -26,14 +26,14 @@ export const getPosts = cache(async () => {
           return null
         }
 
-        console.log(data.numberDate);
+        // console.log(data.numberDate);
 
         return { ...data, body: content }
       })  
   )
 
   const sortedPosts = unsortedPosts.sort((a, b) => {
-    console.log("aNumberdate: ", a.numberDate);
+    // console.log("aNumberdate: ", a.numberDate);
     const beforeDate = DateTime.fromFormat(a.numberDate, 'MM-dd-yyyy');
     const afterDate = DateTime.fromFormat(b.numberDate, 'MM-dd-yyyy');
     return afterDate - beforeDate

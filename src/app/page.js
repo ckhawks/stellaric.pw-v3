@@ -42,6 +42,7 @@ export default function HomeTesting() {
             
           </div> */}
 
+          {/* // Gradients from https://cssgradient.io/gradient-backgrounds/ */}
           <div className={styles.homeCards}>
             <Link href="/design" className={classes([styles.homeCard, styles.homeCardDesign])}>
               <>

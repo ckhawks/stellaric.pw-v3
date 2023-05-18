@@ -18,7 +18,7 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
-  console.log("Getting access token...");
+  // console.log("Getting access token...");
 
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
@@ -33,16 +33,16 @@ const getAccessToken = async () => {
     next: { revalidate: 1800 }
   });
 
-  console.log("token response: ", response)
+  // console.log("token response: ", response)
 
   return response.json();
 };
 
 export const getNowPlaying = async () => {
-  console.log("Getting now playing track...");
+  // console.log("Getting now playing track...");
   const { access_token } = await getAccessToken();
 
-  console.log("access_token: ", access_token);
+  // console.log("access_token: ", access_token);
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
@@ -62,12 +62,12 @@ export const getNowPlaying = async () => {
 };
 
 export async function GET(request) {
-  console.log("Responding to GET /api/spotify...")
+  // console.log("Responding to GET /api/spotify...")
   const response = await getNowPlaying();
 
   const responseJson = await response.json();
 
-  console.log("responseJson", responseJson);
+  // console.log("responseJson", responseJson);
 
   // if (
   //   // response.status === 204 ||

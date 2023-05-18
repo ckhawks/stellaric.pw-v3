@@ -5,6 +5,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@/lib/*": ["./src/lib/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
