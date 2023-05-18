@@ -35,7 +35,7 @@ const SpotifyNowPlaying = async () => {
   let spotifyDataJson = await spotifyDataResponse.json();
   let spotifyData = spotifyDataJson.data;
 
-  console.log('spotifydata1: ', spotifyData);
+  // console.log('spotifydata1: ', spotifyData);
   // console.log("spotifyData.isPlaying1", spotifyData.isPlaying);
 
   // const [ spotifyData, setSpotifyData ] = useState({});
