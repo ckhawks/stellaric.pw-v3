@@ -1,6 +1,6 @@
 {
   "functions": {
-    "blog/[slug]": {
+    "lib/blog/get-posts": {
       "includeFiles": "src/posts/**"
     }
   }

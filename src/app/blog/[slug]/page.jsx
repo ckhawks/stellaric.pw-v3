@@ -2,6 +2,9 @@ import getPosts, { getPost } from '@/lib/blog/get-posts';
 import { PostBody } from './components/PostBody';
 import { notFound } from 'next/navigation';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 import Link from 'next/link';
 
 import styles from '../blog.module.css';
@@ -17,7 +20,7 @@ export default async function PostPage({
   // Pass the post contents to MDX
   return (
     <div className={'page-content content-width'}>
-      <Link className={'link'} href="/blog">← Return</Link>
+      <Link className={'link'} href="/blog"><FontAwesomeIcon icon={faArrowLeft}/> Return</Link>
 
       <p className={styles.blogDate}>{post.date}</p>
       <h1 className={styles.blogHeading}>{post.title}</h1>

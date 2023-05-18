@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleNodes, faClapperboard, faCameraRetro, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNodes, faClapperboard, faCameraRetro, faCode, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function classes(listOfClasses){
   return listOfClasses.join(' ');
@@ -50,7 +50,7 @@ export default function HomeTesting() {
                   <span className={styles.largeIcon}><FontAwesomeIcon icon={faCircleNodes}/></span>
                   <h2>Design</h2>
                   <p className={styles.p}>I am a UX designer, graphic designer, and general designer.</p>
-                  <p className={styles.homeCardLinkoff}>Go to Design →</p>
+                  <p className={styles.homeCardLinkoff}>Go to Design <FontAwesomeIcon icon={faArrowRight}/></p>
                   {/* <Link href="/design">Go to Design</Link> */}
                 </div>
               </>
@@ -62,7 +62,7 @@ export default function HomeTesting() {
                   <span className={styles.largeIcon}><FontAwesomeIcon icon={faClapperboard}/></span>
                   <h2>Production</h2>
                   <p>I am a technical director and observer for live esports events.</p>
-                  <p className={styles.homeCardLinkoff}>Go to Production →</p>
+                  <p className={styles.homeCardLinkoff}>Go to Production <FontAwesomeIcon icon={faArrowRight}/></p>
                   {/* <Link href="/design">Go to Design</Link> */}
                 </div>
               </>
@@ -74,7 +74,7 @@ export default function HomeTesting() {
                   <span className={styles.largeIcon}><FontAwesomeIcon icon={faCameraRetro}/></span>
                   <h2>Photography</h2>
                   <p>I like to take pretty pictures.</p>
-                  <p className={styles.homeCardLinkoff}>Go to Photography →</p>
+                  <p className={styles.homeCardLinkoff}>Go to Photography <FontAwesomeIcon icon={faArrowRight}/></p>
                   {/* <Link href="/design">Go to Design</Link> */}
                 </div>
               </>
@@ -86,7 +86,7 @@ export default function HomeTesting() {
                   <span className={styles.largeIcon}><FontAwesomeIcon icon={faCode}/></span>
                   <h2>Development</h2>
                   <p>I like to solve problems using software.</p>
-                  <p className={styles.homeCardLinkoff}>Go to Development →</p>
+                  <p className={styles.homeCardLinkoff}>Go to Development <FontAwesomeIcon icon={faArrowRight}/></p>
                   {/* <Link href="/design">Go to Design</Link> */}
                 </div>
               </>
