@@ -3,7 +3,7 @@ import path from 'path'
 // import type { Post } from './types'
 import fs from 'fs/promises'
 import { cache } from 'react'
-import { DateTime } from 'Luxon';
+import { DateTime } from 'luxon';
 
 const POSTS_PATH = 'src/posts/';
 
