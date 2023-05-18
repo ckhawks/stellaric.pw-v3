@@ -1,0 +1,36 @@
+.subHeading {
+  font-size: 1rem;
+  /* margin-top: 0px; */
+  opacity: 80%;
+  font-weight: 350;
+  /* margin-bottom: 50px; */
+}
+
+.blogHeading {
+  margin-bottom: 5px;
+}
+
+.blogList {
+  /* margin-top: 50px; */
+}
+
+.blogListingWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: opacity 0.2s ease;
+  padding: 11px 0px;
+  border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.blogListingWrapper:hover {
+  opacity: 60%;
+}
+
+.blogListingTitle {
+  font-weight: 500;
+}
+
+.blogListingDate {
+  opacity: 80%;
+}
