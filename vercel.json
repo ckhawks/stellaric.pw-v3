@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "lib/blog/get-posts": {
-      "includeFiles": "src/posts/**"
-    }
-  }
-}
