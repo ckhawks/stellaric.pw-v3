@@ -19,8 +19,9 @@ export default async function PostPage({
     <div className={'page-content content-width'}>
       <Link className={'link'} href="/blog">← Return</Link>
 
+      <p className={styles.blogDate}>{post.date}</p>
       <h1 className={styles.blogHeading}>{post.title}</h1>
-      <p className={styles.subHeading}>{post.date}{ post.description ? ' — ' + post.description : ''}</p>
+      <p className={styles.blogSubHeading}>{post.description}</p>
       <PostBody>
         {post?.body}
       </PostBody>

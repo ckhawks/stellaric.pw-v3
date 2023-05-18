@@ -1,14 +1,23 @@
-.subHeading {
-  font-size: 1rem;
-  /* margin-top: 0px; */
+.blogDate {
+  margin-bottom: 0px;
+  margin-top: 30px;
   opacity: 80%;
-  font-weight: 350;
-  /* margin-bottom: 50px; */
 }
 
 .blogHeading {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
+
+.blogSubHeading {
+  font-size: 1rem;
+  margin-top: 0px;
+  /* opacity: 80%; */
+  font-weight: 350;
+  margin-bottom: 50px;
+}
+
+
 
 .blogList {
   /* margin-top: 50px; */

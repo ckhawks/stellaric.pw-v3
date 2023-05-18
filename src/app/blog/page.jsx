@@ -6,7 +6,7 @@ import getPosts, { getPost } from '@/lib/blog/get-posts'
 
 export default async function About() {
   const posts = await getPosts();
-  console.log("posts: ", posts);
+  // console.log("posts: ", posts);
 
   return (
     <main className={[styles.maine, styles.column, 'content-width', 'page-content'].join(' ')}>
