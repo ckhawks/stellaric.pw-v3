@@ -1,4 +1,4 @@
-.SpotifyNowPlaying {
+.Base {
   border-radius: 5px;
   border: 1px solid rgb(224, 224, 224);
   display: flex;
@@ -8,21 +8,25 @@
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
   max-height: 86px;
+  transition: transform 0.2s ease-in-out, color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
-.SpotifyNowPlaying:hover {
-  transform: translateY(-1px);
+.Base:hover {
+  /* transform: translateY(-3px); */
+  /* background-color: black; */
+  /* color: white; */
 }
 
-.SpotifyNowPlayingAlbumArtWrapper {
+.AlbumArtWrapper {
   height: 64px;
+  transition: all 0.2s cubic-bezier(0.75, -0.02, 0.2, 0.97);
 }
 
-.SpotifyNowPlayingAlbumArt {
+.AlbumArt {
   border-radius: 3px;
 }
 
-.SpotifyNowPlayingInfoWrapper {
+.InfoWrapper {
   padding: 0px 10px;
   display: flex;
   justify-content: space-between;
@@ -31,7 +35,7 @@
   max-width: 186px;
 }
 
-.SpotifyNowPlayingInfoTitle {
+.InfoTitle {
   font-weight: bold;
   margin: 0px;
   text-overflow: ellipsis;
@@ -40,14 +44,14 @@
   overflow: hidden;
 }
 
-.SpotifyNowPlayingInfoArtist {
+.InfoArtist {
   margin: 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.SpotifyNowPlayingInfoTime {
+.InfoTime {
   margin: 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -56,7 +60,7 @@
   font-size: 0.9rem;
 }
 
-.SpotifyNowPlayingSpotifyLogo {
+.SpotifyLogo {
   position: relative;
   top: 50%;
   right: 0%;
@@ -64,4 +68,79 @@
   /* z-index: 10; */
   align-self: center;
   margin-right: 3px;
+}
+
+.Wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.Popover {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  top: -320px;
+  transform: translate(0, 10px);
+  border: 1px solid rgb(224, 224, 224);
+  background-color: white;
+  /* border: 1px solid grey; */
+  border-radius: 5px;
+  z-index: 10;
+  opacity: 0;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.Wrapper:hover .Popover {
+  visibility: visible;
+  opacity: 1;
+  
+  /* transition: all 0.2 ease-in-out; */
+}
+
+.Wrapper:hover .AlbumArtWrapper {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+/* .Popover:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: calc(50% - 10px);
+  top: -8px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  background-color: red;
+  border-color: transparent transparent #bfbfbf transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+} */
+
+.PopoverAlbumArt {
+  height: 280px;
+  width: 280px;
+  border-radius: 3px;
+}
+
+.AlbumArtHoverArrow {
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  color: black;
+  position: absolute;
+  top: 23px;
+  left: 30px;
+  color: black;
+  font-size: 2rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.Wrapper:hover .AlbumArtHoverArrow {
+  visibility: visible;
+  opacity: 1;
 }

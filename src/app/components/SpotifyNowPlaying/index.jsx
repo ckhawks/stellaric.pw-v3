@@ -2,6 +2,8 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+
 
 import Image from 'next/image';
 
@@ -61,53 +63,79 @@ const SpotifyNowPlaying = async () => {
 
           {/* {console.log("spotifyData331: ", spotifyData)} */}
           {/* Title: {spotifyData.title} */}
-          <a 
-            target='_blank'
-            rel='noopener noreferer'
-            href={
-              spotifyData
-                ? spotifyData.contextUrl
-                // : 'https://open.spotify.com/user/meltedexistence'
-                : 'https://open.spotify.com/playlist/2BD1AvmRoNHyKRzWDqegSc?si=2baa6684c9a4451d'
-            }
-            className={styles.SpotifyNowPlaying} // 'relative flex w-72 items-center space-x-4 rounded-md border p-5 transition-shadow hover:shadow-md'
-          >
-            <div className={styles.SpotifyNowPlayingAlbumArtWrapper}>
-              {spotifyData ? (
-                <Image
-                  className={styles.SpotifyNowPlayingAlbumArt}
-                  width={64}
-                  height={64}
-                  src={spotifyData.albumImageUrl}
-                  alt={spotifyData.album}
-                />
-              ) : (
-                <Image className={styles.SpotifyNowPlayingAlbumArt}
-                  width={64}
-                  height={64}
-                  src={ReduxRumbleAlbumLogo}
-                  alt={"Redux Rumble Soundtrack"}
+          <div className={styles.Wrapper}>
+            <a 
+              target='_blank'
+              rel='noopener noreferer'
+              href={
+                spotifyData
+                  ? spotifyData.contextUrl
+                  // : 'https://open.spotify.com/user/meltedexistence'
+                  : 'https://open.spotify.com/playlist/2BD1AvmRoNHyKRzWDqegSc?si=2baa6684c9a4451d'
+              }
+              className={styles.Base} // 'relative flex w-72 items-center space-x-4 rounded-md border p-5 transition-shadow hover:shadow-md'
+            >
+              <div className={styles.Popover}>
+                {spotifyData ? (
+                    <Image
+                      className={styles.PopoverAlbumArt}
+                      width={285}
+                      height={285}
+                      src={spotifyData.albumImageUrl}
+                      alt={spotifyData.album}
+                    />
+                  ) : (
+                    <Image className={styles.PopoverAlbumArt}
+                      width={285}
+                      height={285}
+                      src={ReduxRumbleAlbumLogo}
+                      alt={"Redux Rumble Soundtrack"}
+                      />
+                  )}
+              </div>
+              <div className={styles.AlbumArtWrapper}>
+                {spotifyData ? (
+                  <Image
+                    className={styles.AlbumArt}
+                    width={64}
+                    height={64}
+                    src={spotifyData.albumImageUrl}
+                    alt={spotifyData.album}
                   />
-              )}
-            </div>
-          
-            <div className={styles.SpotifyNowPlayingInfoWrapper}>
-              <p className={styles.SpotifyNowPlayingInfoTitle}>
-                {spotifyData ? spotifyData.title : 'Redux Rumble Soundtrack'}
-              </p>
-              <p className={styles.SpotifyNowPlayingInfoArtist}>
-                {spotifyData ? spotifyData.artist : 'Stellaric'}
-              </p>
-              { spotifyData && (
-                <p className={styles.SpotifyNowPlayingInfoTime}>
-                  {spotifyData.isPlaying ? 'Listening now' : "Listened " + spotifyData.timeBefore}              
-              </p>
-               )}
-            </div>
-            <div className={styles.SpotifyNowPlayingSpotifyLogo}>
-              <FontAwesomeIcon icon={faSpotify} />
-            </div>
-          </a>
+                ) : (
+                  <Image className={styles.AlbumArt}
+                    width={64}
+                    height={64}
+                    src={ReduxRumbleAlbumLogo}
+                    alt={"Redux Rumble Soundtrack"}
+                    />
+                )}
+                
+              </div>
+              <div className={styles.AlbumArtHoverArrow}>
+                  <FontAwesomeIcon icon={faArrowUp}/>
+                </div>
+
+            
+              <div className={styles.InfoWrapper}>
+                <p className={styles.InfoTitle}>
+                  {spotifyData ? spotifyData.title : 'Redux Rumble Soundtrack'}
+                </p>
+                <p className={styles.InfoArtist}>
+                  {spotifyData ? spotifyData.artist : 'Stellaric'}
+                </p>
+                { spotifyData && (
+                  <p className={styles.InfoTime}>
+                    {spotifyData.isPlaying ? 'Listening now' : "Listened " + spotifyData.timeBefore}              
+                </p>
+                )}
+              </div>
+              <div className={styles.SpotifyLogo}>
+                <FontAwesomeIcon icon={faSpotify} />
+              </div>
+            </a>
+            
+          </div>
         </main>
       </section>
     </>
